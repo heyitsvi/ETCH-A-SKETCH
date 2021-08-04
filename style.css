@@ -1,0 +1,17 @@
+h1{
+    display: grid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 80px;
+    justify-content: center;
+}
+#container{
+    background: linear-gradient(255);
+    margin: auto;
+    display:grid;
+    height: 400px;
+    width: 700px;
+    border-color: black;
+    align-content: flex-start;
+    justify-content: center;
+}
+
