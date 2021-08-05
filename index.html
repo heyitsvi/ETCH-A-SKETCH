@@ -6,9 +6,16 @@
     </head>
     <body>
         <script>
-            let size_grid = 100;
+            let size_grid = 20;
         </script>
         <h1>Etch-a-Sketch</h1>
+        <div id="controls">
+            <div class="range-slider">
+                <input class="range-slider_range" type="range" value="50" min="0" max="100" oninput="rangeValue.innerText = `${this.value} x ${this.value}`">
+                <span class="range-slider_value" id="rangeValue">50 x 50</span>
+              </div>
+            <button id="clear-button">Clear</button>
+        </div>
         <div id="container">
         </div>
     </body>

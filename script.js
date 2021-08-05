@@ -43,7 +43,7 @@ let squares = document.querySelectorAll("#container > div");
 squares.forEach(item => {
     item.addEventListener('mouseover', event =>{
         item.style.backgroundColor = `${randomColor()}`;
-        setTimeout(function(squares){item.style.backgroundColor = "";},1.0*1000);
+        // setTimeout(function(squares){item.style.backgroundColor = "";},1.0*1000);
     })
 })
 
@@ -54,8 +54,12 @@ function randomColor(){
     return `rgb(${red},${green},${blue})`;    
 }
 
+let button = document.querySelector("#clear-button");
 
-// console.log(test);
-// test.addEventListener("mouseover",color,false);
-// test.addEventListener("mouseout",no_color,false);
+button.addEventListener('click', event =>{
+        squares.forEach(item => {
+                item.style.backgroundColor = "";
+        })
+    })
+
 
