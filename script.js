@@ -1,4 +1,9 @@
 let size_grid =50;
+let div_list=[];
+
+// Creating the grid
+
+const container = document.querySelector("#container");
 
 function createDivs(){
     let div = document.createElement('div');
@@ -10,7 +15,6 @@ function appendDivs(parent,children){
         parent.appendChild(children);
     });
 }
-const container = document.querySelector("#container");
 
 function createSquares(size){
     for(let i = 1; i<= size*size; i++){
@@ -19,13 +23,10 @@ function createSquares(size){
 
 }
 
-let div_list=[];
-
 function widthCalc(size_grid,total_area){
     let width = (total_area/size_grid);
     return (width)+'px';
 }
-// console.log(widthCalc(size_grid,500));
 
 function createGrid(size_grid){
     createSquares(size_grid);
@@ -36,7 +37,16 @@ function createGrid(size_grid){
 
 createGrid(size_grid);
 
-// let square = document.getElementById("container");
+function randomColor(){
+    let red = Math.floor(Math.random()*255);   
+    let green = Math.floor(Math.random()*255);
+    let blue = Math.floor(Math.random()*255);
+    return `rgb(${red},${green},${blue})`;    
+}
+
+
+// Event Listeners
+
 let squares = document.querySelectorAll("#container > div");
 
 squares.forEach(item => {
@@ -45,13 +55,6 @@ squares.forEach(item => {
         // setTimeout(function(squares){item.style.backgroundColor = "";},1.0*1000);
     })
 })
-
-function randomColor(){
-    let red = Math.floor(Math.random()*255);   
-    let green = Math.floor(Math.random()*255);
-    let blue = Math.floor(Math.random()*255);
-    return `rgb(${red},${green},${blue})`;    
-}
 
 let button = document.querySelector("#clear-button");
 
@@ -64,7 +67,6 @@ button.addEventListener('click', event =>{
 let x = document.querySelector("#slider-input").addEventListener("input", event => {
     size_grid = event.target.value;
     createGrid(size_grid);
-
 });
 
 
