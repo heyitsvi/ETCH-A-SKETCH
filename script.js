@@ -44,14 +44,6 @@ function randomColor(){
     return `rgb(${red},${green},${blue})`;    
 }
 
-function returnColor(){
-    rainbow.addEventListener("click", event => {
-        return randomColor();
-    })
-    black_white.addEventListener("click",event => {
-        return black_white();
-    })
-}
 
 function rainbowMode(){
     squares.forEach(item => {
