@@ -1,27 +1,71 @@
+body{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: rgb(251, 51, 51);
+    grid-template-rows: 25% 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "header ."
+        "controls container"
+    ;
+}
 h1{
+    /* display: grid; */
+    grid-area: header;
     display: grid;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 80px;
     justify-content: center;
+    border-color: black;
+    border-style:solid;
+    border-width:8px;
+    height: fit-content;
+    width: 0.5fr;
+    max-height: inherit;
+    max-width: inherit;
+    background: white;
+    white-space: nowrap;
+}
+#title{
+    justify-items: center;
 }
 #container{
-    background: linear-gradient(255);
+    grid-area: container;
     margin: auto;
     display:grid;
     height: 600px;
     width: 600px;
     border-color: black;
-    align-content: flex-start;
     justify-content: center;
     border: solid;
-    border-color: #aaa;
-    border-width: thin;
+    border-color: rgb(0, 0, 0);
+    border-width: 8px;
+    background-color: white;
 }
 
 #controls{
-    display:grid;
+    grid-area: controls;
+    display: grid;
+    justify-items: center;
     grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+        "slider"
+        "clear"
+    ;
 }
+
+#slider-input{
+    width: inherit;
+}
+
+.range-slider_range{
+    /* align-items: center;
+    justify-items: center; */
+    margin-left: 5%;
+    width: 5fr;
+    grid-area: slider;
+}
+
 
 .button{
     display: grid;
@@ -29,23 +73,25 @@ h1{
     justify-items: center;
     font-family:Helvetica;
     font-size: 25px;
+    font-style: bold;
+    font-weight: 800;
     margin: auto;
     border-radius: 25px;
     border-width: thin;
-    width:12%;
+    width: fit-content;
     outline: none;
-    height:40px;
-    color:white;
-    border-color: #aaa;
-    background: linear-gradient(rgb(253, 10, 10),rgb(250, 79, 79));
+    height:fit-content;
+    color:rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-width: 8px;
+    border-style: solid;
+    background: white;
 }
 
-#clear-button{
-    grid-area:2;
-}
+
 
 .range-slider{
-    width:40%;
+    width:85%;
     margin:auto;
 }
 .range-slider #rangeValue{
@@ -53,7 +99,7 @@ h1{
     font-size: 40px;
     font-family: inherit;
     text-align: center;
-    color: rgb(102, 102, 108);
+    color: rgb(255, 255, 255);
     align-items: center;
 }
 .range-slider input[type="range"]{
@@ -61,15 +107,16 @@ h1{
     width: 500px;
     height: 40px;
     border-radius: 15px;
-    background: linear-gradient(rgb(253, 10, 10),rgb(250, 79, 79));
-    outline: none;
+    background: white;
+    border-style: solid;
+    border-width: 8px;
     overflow: hidden;
 }
 .range-slider input[type="range"]::-webkit-slider-thumb{
     -webkit-appearance: none;
-    width:40px;
-    height:40px;
-    background: #f5f5f5;
+    width:30px;
+    height:30px;
+    background: #000000;
     border-radius:15px;
     box-shadow: -350px 0px 340px #f5f5f5;
     cursor: pointer;

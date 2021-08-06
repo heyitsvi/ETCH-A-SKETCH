@@ -50,7 +50,9 @@ function randomColor(){
 let squares = document.querySelectorAll("#container > div");
 
 squares.forEach(item => {
+
     item.addEventListener('mouseover', event =>{
+        let 
         item.style.backgroundColor = `${randomColor()}`;
         // setTimeout(function(squares){item.style.backgroundColor = "";},1.0*1000);
     })
@@ -64,10 +66,11 @@ button.addEventListener('click', event =>{
         })
     })
 
-let x = document.querySelector("#slider-input").addEventListener("input", event => {
+let slider_input = document.querySelector("#slider-input").addEventListener("input", event => {
     size_grid = event.target.value;
     createGrid(size_grid);
 });
+
 
 
 

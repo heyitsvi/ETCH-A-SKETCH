@@ -7,13 +7,15 @@
     <body>
         <script>
         </script>
-        <h1>Etch-a-Sketch</h1>
+        <h1 id="title">Etch-a-Sketch</h1>
         <div id="controls">
             <div class="range-slider">
                 <input class="range-slider_range" id="slider-input" type="range" step ="1" value="50" min="1" max="50" oninput="rangeValue.innerText = `${this.value} x ${this.value}`">
-                <span class="range-slider_value" id="rangeValue"> 50 x 50</span>
+                <div class="range-slider_value" id="rangeValue"> 50 x 50</div>
               </div>
-            <button class ="button" id="clear-button">Clear</button>
+            <button class ="button" id="clear-button">Clean</button>
+            <button class ="button" id="rainbow-button">Rainbow Mode</button>
+            <button class ="button" id="black-white">B&W Mode</button>
         </div>
         <div id="container">
         </div>
