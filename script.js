@@ -1,3 +1,4 @@
+let size_grid =50;
 
 function createDivs(){
     let div = document.createElement('div');
@@ -31,8 +32,6 @@ function createGrid(size_grid){
     appendDivs(container,div_list);
     container.style["grid-template-rows"] = `repeat(${size_grid},${widthCalc(size_grid,600)})`;
     container.style["grid-template-columns"] = `repeat(${size_grid},${widthCalc(size_grid,600)})`;
-    // container.style["grid-auto-rows"] = "minmax(100px, auto);";
-    // container.style["grid-auto-columns"] = "minmax(100px, auto);";
 }
 
 createGrid(size_grid);
@@ -61,5 +60,13 @@ button.addEventListener('click', event =>{
                 item.style.backgroundColor = "";
         })
     })
+
+let x = document.querySelector("#slider-input").addEventListener("input", event => {
+    size_grid = event.target.value;
+    createGrid(size_grid);
+
+});
+
+
 
 
