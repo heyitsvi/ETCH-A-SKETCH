@@ -44,19 +44,47 @@ function randomColor(){
     return `rgb(${red},${green},${blue})`;    
 }
 
+function returnColor(){
+    rainbow.addEventListener("click", event => {
+        return randomColor();
+    })
+    black_white.addEventListener("click",event => {
+        return black_white();
+    })
+}
 
+function rainbowMode(){
+    squares.forEach(item => {
+        item.addEventListener('mouseover', event =>{
+                item.style.backgroundColor = `${randomColor()}`;
+        })
+    })
+}
+
+function black_whiteMode(){
+    squares.forEach(item => {
+        item.addEventListener('mouseover', event =>{
+                item.style.backgroundColor = "black";
+        })
+    })
+}
 // Event Listeners
 
 let squares = document.querySelectorAll("#container > div");
+let rainbow = document.querySelector("#rainbow-button");
+let black_white = document.querySelector("#black-white");
 
-squares.forEach(item => {
+black_whiteMode();
 
-    item.addEventListener('mouseover', event =>{
-        let 
-        item.style.backgroundColor = `${randomColor()}`;
-        // setTimeout(function(squares){item.style.backgroundColor = "";},1.0*1000);
-    })
+rainbow.addEventListener("click", evemt => {
+    rainbowMode();
 })
+
+black_white.addEventListener("click", event =>{
+    black_whiteMode();
+})
+
+
 
 let button = document.querySelector("#clear-button");
 
