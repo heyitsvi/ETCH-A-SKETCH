@@ -44,6 +44,7 @@ h1{
 }
 
 #controls{
+<<<<<<< HEAD
     grid-area: controls;
     display: grid;
     justify-items: center;
@@ -52,6 +53,10 @@ h1{
         "slider"
         "clear"
     ;
+=======
+    display:grid;
+    grid-template-rows: repeat(3,1fr);
+>>>>>>> 2a671f1b249422616edd75630fb7eaf583b9e557
 }
 
 #slider-input{
